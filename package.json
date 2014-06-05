@@ -1,0 +1,25 @@
+{
+    "name": "p4",
+    "private": true,
+    "version": "0.0.0-12",
+    "description": "a Sails application",
+    "dependencies": {
+        "sails": "0.9.11",
+        "grunt": "0.4.1",
+        "sails-mongo": "~0.9.7",
+        "ejs": "0.8.4",
+        "optimist": "0.3.4"
+    },
+    "scripts": {
+        "start": "node app.js",
+        "debug": "node debug app.js"
+    },
+    "main": "app.js",
+    "repository": "",
+    "author": "Ezequely Silva de Freitas",
+    "license": "",
+    "subdomain": "p4",
+    "engines": {
+        "node": "0.10.x"
+    }
+}

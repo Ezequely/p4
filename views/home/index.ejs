@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="todoList" class="body">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
+        <script src="js/todo.js"></script>
+    </head>
+    <body ng-controller="todoListCtrl">
+        <h2 class="Three-Dee" align="center">Todo List</h2>
+            <div class="CSSTableGenerator">
+            <table>
+                <tr>
+                    <td>Tarefa</td>
+                    <td>Data</td>
+                    <td>Remover</td>
+                    <td>Priorizar</td>
+                    </tr>
+
+
+                    <tr type="1" ng-repeat="todo in todos">
+
+                        <td width="2000">
+                            <span class="done-{{todo.done}}">{{todo.text}}</span>
+                        </td>
+
+                        <td width="200" align="center">
+                            <span class="done-{{todo.done}}" align="center">{{todo.date}}</span>
+                        </td>
+
+                        <td width="5" align="center">
+                            <button type="submit" class="bultton" ng-click="deleteTodo(todo.id)" onClick="window.location.reload()">DEL</button>
+                        </td>
+
+                        <td width="5" align="center">
+                            <a class="bultton" ng-click = "move($index, 'vip')">VIP</a>
+                        </td>
+                    </tr>
+            </table>
+        </div>
+        <br>
+    </div>
+        <form action="/Todo/create" method="POST" ng-submit="addTodo()" class="searchform">
+            <input class="searchfield2" type="text" ng-model="todo_text"  size="138" placeholder="Adicione sua tarefa aqui!" required name="text"/>
+            <input class="searchfield" type="date" ng-model="todo_date" placeholder="aaaa-mm-dd" required name="date"/>
+        <!--<input type="hidden" ng-model="todo_prioridade" name="prioridade" value="{{todos.lenght + 1}}"/> -->
+            <input class="bultton" type="submit" value="Adicionar" onClick="window.location.reload()">
+        </form>
+    <div>
+
+
+    </body>
+</html>
