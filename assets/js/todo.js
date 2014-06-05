@@ -11,6 +11,9 @@ todoList.controller('todoListCtrl', function ($scope, $http) {
                 $http.delete('/todo/destroy/' + id).success(function(data) {
 
                 });
+                $http.get('/todo').success(function(data) {
+                        $scope.todos = data;
+                });
             };
 
 
